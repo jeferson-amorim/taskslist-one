@@ -1,0 +1,22 @@
+{
+  "name": "tasklist-one",
+  "description": "Tasklist One :: https://tasklist-one.herokuapp.com/",
+  "main": "server.js",
+  "authors": [
+    "Jeferson Amorim amorimjj@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/amorimjj/taskslist-one",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dev/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
