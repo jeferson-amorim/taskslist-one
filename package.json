@@ -1,0 +1,30 @@
+{
+  "name": "tasklist-one",
+  "version": "1.0.0",
+  "description": "Tasklist One :: https://tasklist-one.herokuapp.com/",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "bower": "^1.7.2",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-livereload": "^3.8.1",
+    "jshint": "^2.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amorimjj/taskslist-one.git"
+  },
+  "author": "Jeferson Amorim amorimjj@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amorimjj/taskslist-one/issues"
+  }
+}
