@@ -5,11 +5,22 @@
 
     var toneMetricBox = function () {
 
+        var getUpDownDirection = function(metric) {
+                if ( metric < 50 )
+                    return ' down';
+
+                return ' up';
+        };
+
+        var getLeftRightDirection = function(metric) {
+            return ' right';
+        };
+
         var directions = {
-            'test'              : ' up',
-            'maintainability'   : ' up',
-            'security'          : ' right',
-            'workmanship'          : ' right'
+            'test'              : getUpDownDirection,
+            'maintainability'   : getUpDownDirection,
+            'security'          : getLeftRightDirection,
+            'workmanship'       : getLeftRightDirection
         };
 
         return {
@@ -19,8 +30,9 @@
                 length: '=',
             },
             link: function(scope, element) {
-                var className = scope.type.toLowerCase();
-                var direction = directions[className];
+                var className = scope.type;
+                var metric = scope.length;
+                var direction = directions[className](metric);
                 element.addClass("metric-box " + className + direction);
             },
             template: '<span class="number">{{length}}</span> \

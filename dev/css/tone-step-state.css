@@ -5,3 +5,15 @@
   background-color: #d8d8d8;
   margin: 0 auto;
 }
+.step-state div {
+  height: 2rem;
+}
+.step-state.rejected div {
+  background-color: #be0712;
+}
+.step-state.complete div {
+  background-color: #548039;
+}
+.step-state.pending div {
+  background-color: transparent;
+}

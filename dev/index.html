@@ -10,6 +10,8 @@
     <link href="css/list.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="css/tone-step-state.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="css/tone-metric-box.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/tone-tests-result.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
     <!--[if IE]>
         <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
@@ -17,13 +19,16 @@
 <body>
     <div ng-view></div>
     <!-- build:js assets/js/main.js -->
+    <script src="bower_components/Chart.js/Chart.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <script src="app/app.js"></script>
     <script src="app/directives/tone-step-state.js"></script>
     <script src="app/directives/tone-metric-box.js"></script>
+    <script src="app/directives/tone-tests-result.js"></script>
     <script src="app/services/tasks.js"></script>
     <script src="app/controllers/list.js"></script>
     <!-- endbuild -->

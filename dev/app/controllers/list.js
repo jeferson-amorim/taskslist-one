@@ -4,6 +4,9 @@
 
   var ListCtrl = function($scope, Tasks) {
 
+      $scope.deployOptions = ['Production', 'Homolog'];
+      $scope.deployTarget = $scope.deployOptions[0];
+
       $scope.tasks = Tasks.find();
       $scope.selectedTask = {};
 

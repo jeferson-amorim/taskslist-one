@@ -7,4 +7,20 @@
     border: $border-width solid $pending-color;
     background-color: $pending-background-color;
     margin: 0 auto;
+
+    & div {
+        height: 2rem;
+    }
+
+    &.rejected div {
+        background-color: $rejected-color;
+    }
+
+    &.complete div {
+        background-color: $complete-color;
+    }
+
+    &.pending div {
+        background-color: transparent;
+    }
 }

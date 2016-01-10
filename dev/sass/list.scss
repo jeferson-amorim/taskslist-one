@@ -3,13 +3,76 @@
 
 ul {
 
+    margin: 0.5em auto;
+    background-color: $background-color;
+    text-align: center;
+
     small {
         font-size:$small-font;
     }
 
-    margin: 0.5em auto;
-    background-color: $background-color;
-    text-align: center;
+    .state {
+        text-transform: capitalize;
+    }
+
+    .base-state {
+        background-repeat: no-repeat;
+        border-width: $border-width;
+        border-style: solid;
+        border-color: transparent;
+    }
+
+    & li.rejected {
+        @extend .base-state;
+    }
+
+    & li.complete {
+        @extend .base-state;
+    }
+
+    & li.accepted {
+        @extend .base-state;
+    }
+
+    & div.details div.rejected {
+        @extend .base-state;
+    }
+
+    & div.details div.complete {
+        @extend .base-state;
+    }
+
+    .rejected-state {
+        color: $rejected-color;
+        border-color: $rejected-color;
+        @include background-gradient($rejected-background-color);
+    }
+
+    & li.rejected {
+        @extend .rejected-state;
+    }
+
+    & div.details div.rejected {
+        @extend .rejected-state;
+    }
+
+    .complete-state {
+        border-color: $complete-color;
+        color: $complete-color;
+        @include background-gradient($complete-background-color);
+    }
+
+    & li.complete {
+        @extend .complete-state;
+    }
+
+    & li.accepted {
+        @extend .complete-state;
+    }
+
+    & div.details div.complete {
+        @extend .complete-state;
+    }
 
     &.header {
         width: 97%;
@@ -38,20 +101,15 @@ ul {
 
         li {
             background-attachment: fixed;
-            background-size: 60% 100% !important;
-            background-repeat: no-repeat;
-            border-width: $border-width;
-            border-style: solid;
-            border-color: transparent;
             margin-bottom: 1rem;
             padding: 0.1rem 0.3rem;
             cursor:pointer;
 
-            &.rejected {
-                color: $rejected-color;
-                border-color: $rejected-color;
-                @include background-gradient($rejected-background-color);
-            }
+            div.item, div.details {
+                & div.show-time {
+                    text-transform: lowercase;
+                }
+            };
 
             div.item {
                 @include display-flex;
@@ -81,7 +139,6 @@ ul {
                 }
 
                 & div.show-time {
-                    text-transform: lowercase;
                     @include flex(1.3 0);
                 }
 
@@ -96,26 +153,137 @@ ul {
                 @include flex-wrap(nowrap);
 
                 & > div {
-                    width: 17%;
+
                     margin: 1%;
-                    height: 100%;
+                    min-height: 11rem;
+                    width: 12rem;
                     border-width: $border-width + 1;
-                    border-style: solid;
                     @include display-flex;
                     @include flex-wrap(wrap);
+                    padding: 0.5rem 0.3rem;
 
                     h5 {
                         width: 100%;
-                        text-align: left;
-                        font-weight: bold;
                     }
 
-                    &.complete {
-                        border-color: $complete-color;
-                        @include background-gradient($complete-background-color);
+                    &.step-info.complete {
                         @include box-shadow($gray 4px 4px 8px);
-                        color: $complete-color;
-                        padding: 0.5rem 0.3rem;
+                    }
+
+                    &.step-info.rejected, &.step-info.complete {
+                        font-family: $alternative-font-family;
+
+                        h5 {
+                            text-align: left;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .font-strong {
+                        font-weight: 500;
+                    }
+
+                    & div.computer {
+                        @extend .font-strong;
+                        width: 50%;
+                        color: $running-font-color;
+
+                        img {
+                            margin: 1rem 0;
+                        }
+                    }
+
+                    & div.show-time {
+                        @extend .font-strong;
+                        font-size: $smaller-font;
+                        width: 100%;
+                        color: $black;
+                    }
+
+                    &.result {
+                        width: 13rem;
+                        font-weight: 100;
+                        border: 0;
+                        background: transparent;
+
+                        h5 {
+                            color: $black;
+                        }
+
+                        &.accepted .message {
+                            color: $accepted-color;
+                        }
+
+                        .message {
+                            font-size: 2rem;
+                            margin: auto;
+                            text-align: center;
+
+                            span {
+                                display: block;
+                                width: 100%;
+                                font-size: $small-font;
+                            }
+                        }
+
+                        .action {
+                            margin: auto;
+
+                            button {
+                                color: $white;
+                                padding: 0.5rem 0.8rem;
+                                width: 140px;
+                                font-size: 0.8rem;
+                                font-weight: 100;
+                                letter-spacing: 1px;
+                                background-color: $running-color;
+                                border:2px solid $gray;
+                                @include border-radius(1px);
+                            }
+
+                            &.search-icon button {
+                                text-align: right;
+                                background-image: url('/images/search.png');
+                                background-repeat: no-repeat;
+                                background-position: 12px center;
+                            }
+
+                            div.select {
+
+                                select {
+                                    color: $running-color;
+                                    background: transparent;
+                                    width: 100%;
+                                    line-height: 1;
+                                    border: 0;
+                                    font-size: 0.9rem;
+                                    @include border-radius(0);
+                                    @include appearance(none);
+                                }
+
+                                width: 90px;
+                                height: 1rem;
+                                padding: 0.3rem 0.5rem;
+                                margin-top: 0.5rem;
+                                overflow: hidden;
+                                background-color: transparent;
+                                background-image: url('/images/arrow.png');
+                                background-repeat: no-repeat;
+                                background-position: 85px center;
+                                border: 2px solid $running-color;
+                                display: inline-block;
+                            }
+                        }
+
+                        &.complete {
+                            .action {
+                                text-align: right;
+
+                                button {
+                                    width: 100px;
+                                }
+                            }
+                        }
                     }
                 }
             }

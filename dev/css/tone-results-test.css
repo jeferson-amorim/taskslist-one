@@ -1,0 +1,63 @@
+/*
+Error: Base-level rules cannot contain the parent-selector-referencing character '&'.
+        on line 4 of /Users/amorimjj/devel/tasklist-one/dev/sass/tone-results-test.scss
+
+1: // Import Base
+2: @import "base";
+3: 
+4: & div.chart-container {
+5:     $pie-diameter: 92px;
+6:     $rotation: 60deg;
+7:     position: relative;
+8:     @include transform(rotate($rotation) translate3d( 0, 0, 0));
+9:     width: $pie-diameter;
+
+Backtrace:
+/Users/amorimjj/devel/tasklist-one/dev/sass/tone-results-test.scss:4
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/selector/comma_sequence.rb:29:in `resolve_parent_refs'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:426:in `visit_rule'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/stack.rb:79:in `with_base'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/tree/root_node.rb:20:in `render'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/engine.rb:278:in `render'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/sass-3.4.20/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/bin/compass:44:in `call'
+/usr/local/rvm/gems/ruby-2.2.1@global/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
+/usr/local/rvm/rubies/ruby-2.2.1/bin/compass:23:in `load'
+/usr/local/rvm/rubies/ruby-2.2.1/bin/compass:23:in `<main>'
+/usr/local/rvm/gems/ruby-2.2.1@global/bin/ruby_executable_hooks:15:in `eval'
+/usr/local/rvm/gems/ruby-2.2.1@global/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Base-level rules cannot contain the parent-selector-referencing character '&'.\A         on line 4 of /Users/amorimjj/devel/tasklist-one/dev/sass/tone-results-test.scss\A \A 1: // Import Base\A 2: @import \"base\";\A 3: \A 4: & div.chart-container {\A 5:     $pie-diameter: 92px;\A 6:     $rotation: 60deg;\A 7:     position: relative;\A 8:     @include transform(rotate($rotation) translate3d( 0, 0, 0));\A 9:     width: $pie-diameter;"; }

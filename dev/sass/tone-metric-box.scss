@@ -8,7 +8,6 @@ div.metric-box {
 
     span {
         display: block;
-        font-family: sans-serif;
 
         &.number {
             font-weight: 100;
@@ -33,6 +32,19 @@ div.metric-box {
         }
     }
 
+    .arrow-body {
+        height: 25px;
+        width: 25px;
+        margin: 0 auto;
+    }
+
+    .arrow-up-down {
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+    }
+
     &.up {
 
         & span.number {
@@ -42,19 +54,36 @@ div.metric-box {
             padding-bottom: 0.3rem;
 
             &:before {
-                width: 0;
-                height: 0;
-                border-left: 25px solid transparent;
-                border-right: 25px solid transparent;
+                @extend .arrow-up-down;
                 border-bottom: 30px solid $complete-color;
                 top: $top;
             }
 
             &:after {
-                height: 25px;
-                width: 25px;
-                margin: 0 auto;
+                @extend .arrow-body;
                 background-color: $complete-color;
+                top: $top * -1;
+            }
+        }
+    }
+
+    &.down {
+
+        & span.number {
+
+            color: $white;
+            $top: $font-size/2;
+            padding-bottom: 0.3rem;
+
+            &:before {
+                @extend .arrow-body;
+                background-color: $rejected-color;
+                top: $top;
+            }
+
+            &:after {
+                @extend .arrow-up-down;
+                border-top: 30px solid $rejected-color;
                 top: $top * -1;
             }
         }
@@ -70,9 +99,8 @@ div.metric-box {
             }
 
             &:before {
-                height: 25px;
-                width: 25px;
-                margin: auto;
+                @extend .arrow-body;
+                margin: 0 auto;
                 background-color: $yellow;
                 top: $font-size + 0.1;
                 margin-right: 50%;

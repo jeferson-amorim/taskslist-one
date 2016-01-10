@@ -12,7 +12,12 @@
                 progress: '=',
             },
             link: function(scope, element) {
+                var state = scope.state;
                 element.addClass('step-state');
+                element.addClass(state);
+
+                if ( state != 'running')
+                    scope.progress = 100;
             },
             template: '<div ng-style="{ \'width\': progress + \'%\' }"></div>'
         };

@@ -5,7 +5,7 @@
     'use strict';
 
     angular
-        .module('tasklist-one', ['ngRoute','ngResource', 'ngAnimate']);
+        .module('tasklist-one', ['ngRoute','ngResource', 'ngAnimate', 'chart.js']);
 
     var httpInterceptorErrorHandler = function($q) {
         return {

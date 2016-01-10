@@ -4,7 +4,6 @@ div.metric-box {
 }
 div.metric-box span {
   display: block;
-  font-family: sans-serif;
 }
 div.metric-box span.number {
   font-weight: 100;
@@ -25,23 +24,39 @@ div.metric-box span.description {
   color: #000000;
   text-transform: capitalize;
 }
+div.metric-box .arrow-body, div.metric-box.up span.number:after, div.metric-box.down span.number:before, div.metric-box.right span.number:before {
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+}
+div.metric-box .arrow-up-down, div.metric-box.up span.number:before, div.metric-box.down span.number:after {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
 div.metric-box.up span.number {
   color: #ffffff;
   padding-bottom: 0.3rem;
 }
 div.metric-box.up span.number:before {
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
   border-bottom: 30px solid #548039;
   top: 0.6rem;
 }
 div.metric-box.up span.number:after {
-  height: 25px;
-  width: 25px;
-  margin: 0 auto;
   background-color: #548039;
+  top: -0.6rem;
+}
+div.metric-box.down span.number {
+  color: #ffffff;
+  padding-bottom: 0.3rem;
+}
+div.metric-box.down span.number:before {
+  background-color: #be0712;
+  top: 0.6rem;
+}
+div.metric-box.down span.number:after {
+  border-top: 30px solid #be0712;
   top: -0.6rem;
 }
 div.metric-box.right span.number {
@@ -51,9 +66,7 @@ div.metric-box.right span.number:before, div.metric-box.right span.number:after 
   margin: 0;
 }
 div.metric-box.right span.number:before {
-  height: 25px;
-  width: 25px;
-  margin: auto;
+  margin: 0 auto;
   background-color: #fed86e;
   top: 1.3rem;
   margin-right: 50%;

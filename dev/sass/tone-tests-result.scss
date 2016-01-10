@@ -1,0 +1,73 @@
+// Import Base
+@import "base";
+
+tone-tests-result {
+
+    width: 100%;
+    @include display-flex;
+    @include flex-wrap(wrap);
+
+    & div.chart-container {
+        $pie-diameter: 92px;
+        $rotation: 60deg;
+        position: relative;
+        @include transform(rotate($rotation) translate3d( 0, 0, 0));
+        width: $pie-diameter;
+        height: $pie-diameter;
+
+        & div.tooltip {
+            font-size: 0.7rem;
+            color: $black;
+            position: absolute;
+            @include transform(rotate($rotation *  -1)  translate3d( 0, 0, 0));
+        }
+    }
+
+    & div.perc {
+        width: 50%;
+        margin: auto;
+        font-size: 2.5rem;
+        font-weight: 100;
+
+        span {
+            display: block;
+            width: 100%;
+            font-size: $smaller-font;
+            color: $black;
+            letter-spacing: 0;
+            font-weight: 500;
+        }
+    }
+
+    & div.bar {
+
+        $height: 2rem;
+        width: 90%;
+        height: $height;
+        background-color: $progress-bar-background-color;
+        margin: auto;
+        position: relative;
+
+        & div.content {
+
+            height: $height;
+            position: relative;
+            top: $height * - 1;
+            padding-top: 0.1rem;
+
+            & span {
+                width: 100%;
+                display: block;
+                color: $black;
+                font-size: $smaller-font;
+            }
+        }
+
+        & div.progress {
+            height: $height;
+            width: 0;
+            background-color: $progress-bar-color;
+            @include transition(width 1.5s);
+        }
+    }
+}
