@@ -1,0 +1,50 @@
+<ul class="header">
+    <li>Changelist / Build</li>
+    <li>Owner</li>
+    <li class="show-time">Time Started</li>
+    <li>State</li>
+    <li>Metrics</li>
+    <li>Build</li>
+    <li>Unit Test</li>
+    <li>Functional Test</li>
+</ul>
+<ul class="items">
+    <li class="rejected" ng-repeat="task in tasks | orderBy:'-startedAt'" ng-click="toggleSelection(task)">
+        <div class="item">
+            <div>
+                <img src="images/icon-firewall.png" alt="icon">
+                <small>{{ task.changelist }}</small>
+            </div>
+            <div><small>{{ task.owner }}</small></div>
+            <div class="show-time">{{ task.startedAt | date : 'd/M/yyyy h:mma' }}</div>
+            <div>{{ task.state }}</div>
+            <div ng-class="{ expanded: task.selected }">
+                <div tone-step-state state="task.metrics.state" progress="100"></div>
+                <div tone-step-state state="task.buid.state" progress="100"></div>
+                <div tone-step-state state="task.unitTest.state" progress="100"></div>
+                <div tone-step-state state="task.funcionalTest.state" progress="100"></div>
+            </div>
+        </div>
+        <div class="details" ng-show="task.selected">
+            <div class="complete">
+                <h5>Metrics</h5>
+                <div tone-metric-box type="'test'" length="task.metrics.test"></div>
+                <div tone-metric-box type="'maintainability'" length="task.metrics.maintainability"></div>
+                <div tone-metric-box type="'security'" length="task.metrics.security"></div>
+                <div tone-metric-box type="'workmanship'" length="task.metrics.workmanship"></div>
+            </div>
+            <div class="complete">
+                <h5>Build</h5>
+            </div>
+            <div class="complete">
+                <h5>Unit Test</h5>
+            </div>
+            <div class="complete">
+                <h5>Functional Test</h5>
+            </div>
+            <div class="result">
+                <h5>Result</h5>
+            </div>
+        </div>
+    </li>
+</ul>

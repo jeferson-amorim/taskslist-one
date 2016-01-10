@@ -4,12 +4,14 @@ const
   environment = process.env.NODE_ENV || 'development',
   express = require('express'),
   app = express(),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  tasksRoute = require('./api/routers/tasks');
 
 let appRoot = environment === 'production' ? 'dist' : 'dev';
 
 app.use(bodyParser.json());
-app.use(express.static(appRoot));
+app.use(express.static(__dirname + '/' + appRoot));
+tasksRoute(app);
 
 app.get('*', function(request, response, next) {
   response.sendFile(__dirname + '/' + appRoot + '/index.html');

@@ -8,6 +8,7 @@ var gulp            = require('gulp');
 var jshint          = require('gulp-jshint');
 var livereload      = require('gulp-livereload');
 var spawn           = require('child_process').spawn;
+var compass         = require('gulp-compass');
 var node;
 
 /*=====  End of Loaders  ======*/
@@ -16,8 +17,8 @@ var node;
 =            References            =
 ==================================*/
 
-var files = ['./server.js', './dev/api/**/*.js', './dev/app/**/*.js', '!./dev/app/js/**/*.js'];
-
+var files = ['./server.js', './api/**/*.js', './dev/api/**/*.js', './dev/app/**/*.js', '!./dev/app/js/**/*.js'];
+var sassFiles = ['./dev/sass/**/*.scss'];
 
 /*=====  End of References  ======*/
 
@@ -45,10 +46,18 @@ gulp.task('files', function () {
     return gulp.src(files).pipe(livereload());
 });
 
+gulp.task('compass', function () {
+    return gulp.src(sassFiles)
+        .pipe(compass({
+            sass: './dev/sass',
+            css: './dev/css',
+        }));
+});
 
-gulp.task('api', ['hint', 'server'], function () {
+
+gulp.task('api', ['hint', 'compass', 'server'], function () {
 
     livereload.listen();
-
+    gulp.watch(sassFiles, ['compass']);
     gulp.watch(files, ['hint', 'server', 'files']);
 });

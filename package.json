@@ -5,11 +5,13 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.14.2",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "q": "^1.4.1"
   },
   "devDependencies": {
     "bower": "^1.7.2",
     "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
     "gulp-jshint": "^2.0.0",
     "gulp-livereload": "^3.8.1",
     "jshint": "^2.8.0"

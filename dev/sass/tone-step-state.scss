@@ -1,0 +1,10 @@
+// Import Base
+@import "base";
+
+.step-state {
+    width: 8%;
+    height: 2rem;
+    border: $border-width solid $pending-color;
+    background-color: $pending-background-color;
+    margin: 0 auto;
+}

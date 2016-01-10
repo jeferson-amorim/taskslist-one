@@ -1,0 +1,124 @@
+// Import Base
+@import "base";
+
+ul {
+
+    small {
+        font-size:$small-font;
+    }
+
+    margin: 0.5em auto;
+    background-color: $background-color;
+    text-align: center;
+
+    &.header {
+        width: 97%;
+        @include display-flex;
+        @include flex-wrap(nowrap);
+
+        li {
+            display: inline-block; /* non-flexbox browsers */
+            @include flex(1 0);
+
+            &.show-time {
+                @include flex(1.3 0);
+            }
+
+            &:first-child {
+                text-align: left;
+                @include flex(1.2 0);
+            }
+
+        }
+    }
+
+    &.items {
+
+        width: 98%;
+
+        li {
+            background-attachment: fixed;
+            background-size: 60% 100% !important;
+            background-repeat: no-repeat;
+            border-width: $border-width;
+            border-style: solid;
+            border-color: transparent;
+            margin-bottom: 1rem;
+            padding: 0.1rem 0.3rem;
+            cursor:pointer;
+
+            &.rejected {
+                color: $rejected-color;
+                border-color: $rejected-color;
+                @include background-gradient($rejected-background-color);
+            }
+
+            div.item {
+                @include display-flex;
+                @include flex-wrap(wrap);
+                line-height: 2em;
+                vertical-align: middle;
+
+                img {
+                    vertical-align: middle;
+                }
+
+                & > div:first-child {
+                    text-align: left;
+                    @include flex(1.2 0);
+                }
+
+                & > div:last-child {
+                    text-align: left;
+                    @include flex(4 0);
+                    @include display-flex;
+                    @include flex-wrap(nowrap);
+                }
+
+                & > div {
+                    display: inline-block; /* non-flexbox browsers */
+                    @include flex(1 0);
+                }
+
+                & div.show-time {
+                    text-transform: lowercase;
+                    @include flex(1.3 0);
+                }
+
+                & div.expanded {
+                    visibility: hidden;
+                }
+            }
+
+            div.details {
+
+                @include display-flex;
+                @include flex-wrap(nowrap);
+
+                & > div {
+                    width: 17%;
+                    margin: 1%;
+                    height: 100%;
+                    border-width: $border-width + 1;
+                    border-style: solid;
+                    @include display-flex;
+                    @include flex-wrap(wrap);
+
+                    h5 {
+                        width: 100%;
+                        text-align: left;
+                        font-weight: bold;
+                    }
+
+                    &.complete {
+                        border-color: $complete-color;
+                        @include background-gradient($complete-background-color);
+                        @include box-shadow($gray 4px 4px 8px);
+                        color: $complete-color;
+                        padding: 0.5rem 0.3rem;
+                    }
+                }
+            }
+        }
+    }
+}

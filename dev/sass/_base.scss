@@ -1,4 +1,23 @@
-// Import compass
 @import "compass/css3";
 
-@import "compass/reset";
+@import "compass/css3/flexbox";
+
+$white: #ffffff;
+$black: #000000;
+$gray: #c5c5c5;
+$yellow: #fed86e;
+$small-font: 0.9rem;
+$smaller-font: 0.8rem;
+$border-width: 2px;
+$background-color: #feffff;
+$pending-color: #c4c4c4;
+$pending-background-color: #d8d8d8;
+$rejected-color: #be0712;
+$rejected-background-color: lighten($rejected-color, 55%);
+$complete-color: #548039;
+$complete-background-color: lighten($complete-color, 55%);
+
+
+@mixin background-gradient($color) {
+    @include background-image(linear-gradient(140deg, $color, rgb(255,255,255), rgb(255,255,255), rgb(255,255,255)));
+}

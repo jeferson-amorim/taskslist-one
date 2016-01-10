@@ -1,0 +1,127 @@
+ul {
+  margin: 0.5em auto;
+  background-color: #feffff;
+  text-align: center;
+}
+ul small {
+  font-size: 0.9rem;
+}
+ul.header {
+  width: 97%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+ul.header li {
+  display: inline-block;
+  /* non-flexbox browsers */
+  -webkit-flex: 1 0;
+  flex: 1 0;
+}
+ul.header li.show-time {
+  -webkit-flex: 1.3 0;
+  flex: 1.3 0;
+}
+ul.header li:first-child {
+  text-align: left;
+  -webkit-flex: 1.2 0;
+  flex: 1.2 0;
+}
+ul.items {
+  width: 98%;
+}
+ul.items li {
+  background-attachment: fixed;
+  background-size: 60% 100% !important;
+  background-repeat: no-repeat;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  margin-bottom: 1rem;
+  padding: 0.1rem 0.3rem;
+  cursor: pointer;
+}
+ul.items li.rejected {
+  color: #be0712;
+  border-color: #be0712;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMDQ3MjEiIHkxPSItMC4wMzk2MTQiIHgyPSIwLjk1Mjc5IiB5Mj0iMS4wMzk2MTQiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZWUwZTEiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzMzMzJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNjYuNjY2NjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-linear-gradient(310deg, #fee0e1, #ffffff, #ffffff, #ffffff);
+  background-image: -webkit-linear-gradient(310deg, #fee0e1, #ffffff, #ffffff, #ffffff);
+  background-image: linear-gradient(140deg, #fee0e1, #ffffff, #ffffff, #ffffff);
+}
+ul.items li div.item {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  line-height: 2em;
+  vertical-align: middle;
+}
+ul.items li div.item img {
+  vertical-align: middle;
+}
+ul.items li div.item > div:first-child {
+  text-align: left;
+  -webkit-flex: 1.2 0;
+  flex: 1.2 0;
+}
+ul.items li div.item > div:last-child {
+  text-align: left;
+  -webkit-flex: 4 0;
+  flex: 4 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+ul.items li div.item > div {
+  display: inline-block;
+  /* non-flexbox browsers */
+  -webkit-flex: 1 0;
+  flex: 1 0;
+}
+ul.items li div.item div.show-time {
+  text-transform: lowercase;
+  -webkit-flex: 1.3 0;
+  flex: 1.3 0;
+}
+ul.items li div.item div.expanded {
+  visibility: hidden;
+}
+ul.items li div.details {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+ul.items li div.details > div {
+  width: 17%;
+  margin: 1%;
+  height: 100%;
+  border-width: 3px;
+  border-style: solid;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+ul.items li div.details > div h5 {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+ul.items li div.details > div.complete {
+  border-color: #548039;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMDQ3MjEiIHkxPSItMC4wMzk2MTQiIHgyPSIwLjk1Mjc5IiB5Mj0iMS4wMzk2MTQiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlN2YxZTAiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzMzMzJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNjYuNjY2NjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-linear-gradient(310deg, #e7f1e0, #ffffff, #ffffff, #ffffff);
+  background-image: -webkit-linear-gradient(310deg, #e7f1e0, #ffffff, #ffffff, #ffffff);
+  background-image: linear-gradient(140deg, #e7f1e0, #ffffff, #ffffff, #ffffff);
+  -moz-box-shadow: #c5c5c5 4px 4px 8px;
+  -webkit-box-shadow: #c5c5c5 4px 4px 8px;
+  box-shadow: #c5c5c5 4px 4px 8px;
+  color: #548039;
+  padding: 0.5rem 0.3rem;
+}

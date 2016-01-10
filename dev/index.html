@@ -5,12 +5,27 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Tasklist One</title>
-    <link href="css/app.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/app.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/list.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/tone-step-state.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/tone-metric-box.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
 </head>
 <body>
     <div ng-view></div>
     <!-- build:js assets/js/main.js -->
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/directives/tone-step-state.js"></script>
+    <script src="app/directives/tone-metric-box.js"></script>
+    <script src="app/services/tasks.js"></script>
+    <script src="app/controllers/list.js"></script>
     <!-- endbuild -->
   </body>
 </html>
