@@ -1,23 +1,23 @@
-.hidden-element, tone-tests-result div.perc, tone-tests-result div.bar div.content {
+.hidden-element, .tone-tests-result div.perc, .tone-tests-result div.bar div.content {
   visibility: hidden;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-.visibile-element, tone-tests-result.tone-loaded div.perc, tone-tests-result.tone-loaded div.bar div.content {
+.visibile-element, .tone-tests-result.tone-loaded div.perc, .tone-tests-result.tone-loaded div.bar div.content {
   visibility: visible;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-tone-tests-result {
+.tone-tests-result {
   width: 100%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-tone-tests-result div.chart-container {
+.tone-tests-result div.chart-container {
   position: relative;
   -moz-transform: rotate(60deg) translate3d(0, 0, 0);
   -ms-transform: rotate(60deg) translate3d(0, 0, 0);
@@ -26,7 +26,7 @@ tone-tests-result div.chart-container {
   width: 92px;
   height: 92px;
 }
-tone-tests-result div.chart-container div.tooltip {
+.tone-tests-result div.chart-container div.tooltip {
   font-size: 0.7rem;
   color: #000000;
   position: absolute;
@@ -35,7 +35,7 @@ tone-tests-result div.chart-container div.tooltip {
   -webkit-transform: rotate(-60deg) translate3d(0, 0, 0);
   transform: rotate(-60deg) translate3d(0, 0, 0);
 }
-tone-tests-result div.perc {
+.tone-tests-result div.perc {
   -moz-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
   -o-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
   -webkit-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
@@ -45,7 +45,7 @@ tone-tests-result div.perc {
   font-size: 2.5rem;
   font-weight: 100;
 }
-tone-tests-result div.perc span {
+.tone-tests-result div.perc span {
   display: block;
   width: 100%;
   font-size: 0.8rem;
@@ -53,14 +53,14 @@ tone-tests-result div.perc span {
   letter-spacing: 0;
   font-weight: 500;
 }
-tone-tests-result div.bar {
+.tone-tests-result div.bar {
   width: 90%;
   height: 2rem;
   background-color: #f6cbae;
   margin: auto;
   position: relative;
 }
-tone-tests-result div.bar div.content {
+.tone-tests-result div.bar div.content {
   -moz-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
   -o-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
   -webkit-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
@@ -70,13 +70,13 @@ tone-tests-result div.bar div.content {
   top: -2rem;
   padding-top: 0.1rem;
 }
-tone-tests-result div.bar div.content span {
+.tone-tests-result div.bar div.content span {
   width: 100%;
   display: block;
   color: #000000;
   font-size: 0.8rem;
 }
-tone-tests-result div.bar div.progress {
+.tone-tests-result div.bar div.progress {
   height: 2rem;
   width: 0;
   background-color: #c6dfb5;

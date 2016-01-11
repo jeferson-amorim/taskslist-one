@@ -26,17 +26,17 @@
         return {
             restrict: 'A',
             scope: {
-                type: '=',
-                length: '=',
+                header: '=',
+                metric: '=',
             },
             link: function(scope, element) {
-                var className = scope.type;
-                var metric = scope.length;
+                var className = scope.header;
+                var metric = scope.metric;
                 var direction = directions[className](metric);
                 element.addClass("metric-box " + className + direction);
             },
-            template: '<span class="number">{{length}}</span> \
-            <span class="description">{{type}}</span>'
+            template: '<span class="number">{{metric}}</span> \
+            <span class="description">{{header}}</span>'
         };
     };
 

@@ -59,12 +59,13 @@
         };
 
         return {
-            restrict: 'E',
+            restrict: 'A',
             scope: {
                 results: '='
             },
             link: function(scope, element) {
 
+                element.addClass('tone-tests-result');
                 scope.chartOptions = {
                     tooltipEvents: [],
                     showTooltips: true,

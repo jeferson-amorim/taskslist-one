@@ -1,5 +1,180 @@
-/* Welcome to Compass. Use this file to write IE specific override styles.
- * Import this file using the following HTML or equivalent:
- * <!--[if IE]>
- *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
- * <![endif]--> */
+
+// Import Base
+@import "base";
+
+
+ul.header {
+
+    padding: 0;
+
+    li {
+        display: inline-block;
+        width: 11.5%;
+        padding: 0;
+        margin: 0;
+    }
+
+    li:first-child {
+        text-align: left;
+    }
+}
+
+ul.items {
+
+    li {
+        margin-bottom: 5px;
+    }
+
+    div.item {
+        & > div {
+            display: inline-block;
+            vertical-align:middle;
+            width: 12%;
+        }
+
+        & > div:first-child, & > div.show-time {
+            font-size: 14px;
+        }
+
+        & > div:first-child {
+            width: 13%;
+        }
+
+        & > div.steps {
+            width: 45%;
+
+            div.step-state {
+                $height: 26px;
+                display: inline-block;
+                vertical-align:middle;
+                height: $height;
+                margin: 0 7.2%;
+
+                div {
+                    height:$height;
+                }
+            }
+        }
+    }
+
+    div.details {
+
+        $height: 175px;
+
+        text-align: left;
+
+        & > div {
+
+            h5 {
+                padding: 2px;
+            }
+
+            vertical-align:top;
+            display: inline-block;
+            width: 16%;
+            height: 175px;
+
+            div.computer {
+                display: inline-block;
+                width: 40% !important;
+                padding-top: 14px;
+                margin: 2%;
+                height: $height * 0.6;
+                text-align: center;
+            }
+
+            div.show-time {
+                display: inline-block;
+                width:100% !important;
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+
+        div.tone-tests-result {
+
+            text-align: right;
+
+            & > div {
+                display: inline-block;
+                vertical-align: bottom;
+            }
+
+            .chart-container {
+                width: 50% !important;
+            }
+
+            .perc {
+                margin-top: 40px;
+                margin-bottom: 10px;
+                vertical-align: bottom;
+                width: 50% !important;
+                text-align: center;
+                font-size: 40px;
+
+                span {
+                    font-size: 12px;
+                }
+
+            }
+
+            .bar {
+                $height: 40px;
+
+                width: 90%;
+                margin: 0 5%;
+                position: relative;
+                height: $height;
+
+                .progress {
+                    height: $height;
+                }
+
+                .content {
+                    position: relative;
+                    top: ($height - 4) * -1;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        div.metric-box {
+            display:inline-block;
+            width: 40% !important;
+            text-align: center;
+
+            .number {
+                font-size: 16px;
+            }
+
+            .description {
+                font-size: 11px;
+            }
+
+            &.up, &.down {
+                .number:after {
+                    top: -20px;
+                }
+                .description {
+                    top: -15px;
+                    position: relative;
+                }
+            }
+
+            &.right {
+                .number:before {
+                    top:20px;
+                }
+                .number:after {
+                    top:-33px;
+                }
+                .description {
+                    top: -30px;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+}

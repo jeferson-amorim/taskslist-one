@@ -36,13 +36,13 @@
                 $compile(el)(scope);
                 element.append(el);
                 element.css('position', 'relative');
-                //console.log(element);
 
                 el.css({'left': (10 + element[0].offsetWidth) + 'px'});
 
                 element.on('click', function(e) {
 
-                    e.stopImmediatePropagation();
+                    if ( e.stopPropagation ) e.stopPropagation();
+                    if ( e.preventDefault ) e.preventDefault();
 
                     if ( ! scope.showing ) {
                         tonePopOverControl.closeOpen();

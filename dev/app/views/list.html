@@ -31,10 +31,10 @@
                 title="'Metrics details'"
                 body="'Metrics details not available yet.'">
                 <h5>Metrics</h5>
-                <div tone-metric-box type="'test'" length="task.metrics.test"></div>
-                <div tone-metric-box type="'maintainability'" length="task.metrics.maintainability"></div>
-                <div tone-metric-box type="'security'" length="task.metrics.security"></div>
-                <div tone-metric-box type="'workmanship'" length="task.metrics.workmanship"></div>
+                <div tone-metric-box header="'test'" metric="task.metrics.test"></div>
+                <div tone-metric-box header="'maintainability'" metric="task.metrics.maintainability"></div>
+                <div tone-metric-box header="'security'" metric="task.metrics.security"></div>
+                <div tone-metric-box header="'workmanship'" metric="task.metrics.workmanship"></div>
             </div>
             <div class="step-info"
                 ng-class="task.buid.state" tone-pop-over
@@ -50,14 +50,14 @@
                 title="'Unit Tests details'"
                 body="'Unit Tests details not implemented yet.'">
                 <h5>Unit Tests</h5>
-                <tone-tests-result results="task.unitTest"></tone-tests-result>
+                <div tone-tests-result results="task.unitTest"></div>
             </div>
             <div class="step-info"
                 ng-class="task.funcionalTest.state" tone-pop-over
                 title="'Functional Tests details'"
                 body="'Functional Tests details not implemented yet.'">
                 <h5>Functional Tests</h5>
-                <tone-tests-result results="task.funcionalTest"></tone-tests-result>
+                <div tone-tests-result results="task.funcionalTest"></div>
             </div>
             <div class="result" ng-class="task.result.state" ng-click="$event.stopPropagation();">
                 <h5>Result:</h5>

@@ -1,5 +1,141 @@
-/* Welcome to Compass. Use this file to write IE specific override styles.
- * Import this file using the following HTML or equivalent:
- * <!--[if IE]>
- *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
- * <![endif]--> */
+.hidden-element {
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.visibile-element {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+ul.header {
+  padding: 0;
+}
+ul.header li {
+  display: inline-block;
+  width: 11.5%;
+  padding: 0;
+  margin: 0;
+}
+ul.header li:first-child {
+  text-align: left;
+}
+
+ul.items li {
+  margin-bottom: 5px;
+}
+ul.items div.item > div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 12%;
+}
+ul.items div.item > div:first-child, ul.items div.item > div.show-time {
+  font-size: 14px;
+}
+ul.items div.item > div:first-child {
+  width: 13%;
+}
+ul.items div.item > div.steps {
+  width: 45%;
+}
+ul.items div.item > div.steps div.step-state {
+  display: inline-block;
+  vertical-align: middle;
+  height: 26px;
+  margin: 0 7.2%;
+}
+ul.items div.item > div.steps div.step-state div {
+  height: 26px;
+}
+ul.items div.details {
+  text-align: left;
+}
+ul.items div.details > div {
+  vertical-align: top;
+  display: inline-block;
+  width: 16%;
+  height: 175px;
+}
+ul.items div.details > div h5 {
+  padding: 2px;
+}
+ul.items div.details > div div.computer {
+  display: inline-block;
+  width: 40% !important;
+  padding-top: 14px;
+  margin: 2%;
+  height: 105px;
+  text-align: center;
+}
+ul.items div.details > div div.show-time {
+  display: inline-block;
+  width: 100% !important;
+  font-size: 12px;
+  text-align: center;
+}
+ul.items div.details div.tone-tests-result {
+  text-align: right;
+}
+ul.items div.details div.tone-tests-result > div {
+  display: inline-block;
+  vertical-align: bottom;
+}
+ul.items div.details div.tone-tests-result .chart-container {
+  width: 50% !important;
+}
+ul.items div.details div.tone-tests-result .perc {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  vertical-align: bottom;
+  width: 50% !important;
+  text-align: center;
+  font-size: 40px;
+}
+ul.items div.details div.tone-tests-result .perc span {
+  font-size: 12px;
+}
+ul.items div.details div.tone-tests-result .bar {
+  width: 90%;
+  margin: 0 5%;
+  position: relative;
+  height: 40px;
+}
+ul.items div.details div.tone-tests-result .bar .progress {
+  height: 40px;
+}
+ul.items div.details div.tone-tests-result .bar .content {
+  position: relative;
+  top: -36px;
+  width: 100%;
+  text-align: center;
+}
+ul.items div.details div.metric-box {
+  display: inline-block;
+  width: 40% !important;
+  text-align: center;
+}
+ul.items div.details div.metric-box .number {
+  font-size: 16px;
+}
+ul.items div.details div.metric-box .description {
+  font-size: 11px;
+}
+ul.items div.details div.metric-box.up .number:after, ul.items div.details div.metric-box.down .number:after {
+  top: -20px;
+}
+ul.items div.details div.metric-box.up .description, ul.items div.details div.metric-box.down .description {
+  top: -15px;
+  position: relative;
+}
+ul.items div.details div.metric-box.right .number:before {
+  top: 20px;
+}
+ul.items div.details div.metric-box.right .number:after {
+  top: -33px;
+}
+ul.items div.details div.metric-box.right .description {
+  top: -30px;
+  position: relative;
+}
