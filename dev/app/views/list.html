@@ -12,8 +12,7 @@
     <li ng-class="task.state" ng-repeat="task in tasks | orderBy:'-changelist'" ng-click="toggleSelection(task)">
         <div class="item">
             <div>
-                <img
-                    ng-src="images/icon-{{task.type == 'firewall' ? 'firewall' : 'computer'}}.png" alt="icon">
+                <img tone-type-icon type="task.type" state="task.state" />
                 <small>{{ task.type == 'firewall' ? task.changelist : task.owner }}</small>
             </div>
             <div><small ng-if="task.type == 'firewall'">{{ task.owner }}</small></div>
