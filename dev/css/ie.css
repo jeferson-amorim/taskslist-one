@@ -39,12 +39,13 @@ ul.items div.item > div:first-child {
 }
 ul.items div.item > div.steps {
   width: 45%;
+  line-height: 26px;
 }
 ul.items div.item > div.steps div.step-state {
   display: inline-block;
   vertical-align: middle;
   height: 26px;
-  margin: 0 7.2%;
+  margin: 2px 7.2%;
 }
 ul.items div.item > div.steps div.step-state div {
   height: 26px;
@@ -138,4 +139,20 @@ ul.items div.details div.metric-box.right .number:after {
 ul.items div.details div.metric-box.right .description {
   top: -30px;
   position: relative;
+}
+ul.items div.details div.result {
+  text-align: center;
+}
+ul.items div.details div.result div.message {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+ul.items div.details div.result div.message span {
+  font-size: 18px;
+}
+ul.items div.details div.result button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 5px;
 }

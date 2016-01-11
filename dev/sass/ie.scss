@@ -41,14 +41,16 @@ ul.items {
         }
 
         & > div.steps {
+            $height: 26px;
+
             width: 45%;
+            line-height: $height;
 
             div.step-state {
-                $height: 26px;
                 display: inline-block;
                 vertical-align:middle;
                 height: $height;
-                margin: 0 7.2%;
+                margin: 2px 7.2%;
 
                 div {
                     height:$height;
@@ -175,6 +177,27 @@ ul.items {
                 }
             }
         }
+
+        div.result {
+            text-align: center;
+
+            div.message {
+                font-size: 38px;
+                margin-bottom: 10px;
+                span {
+                    font-size: 18px;
+                }
+            }
+
+            button {
+                padding-top: 5px;
+                padding-bottom: 5px;
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+        }
+
     }
 
 }
