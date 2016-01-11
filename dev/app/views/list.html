@@ -26,25 +26,37 @@
             </div>
         </div>
         <div class="details" ng-if="task.selected">
-            <div class="step-info" ng-class="task.metrics.state">
+            <div class="step-info"
+                ng-class="task.metrics.state" tone-pop-over
+                title="'Metrics details'"
+                body="'Metrics details not available yet.'">
                 <h5>Metrics</h5>
                 <div tone-metric-box type="'test'" length="task.metrics.test"></div>
                 <div tone-metric-box type="'maintainability'" length="task.metrics.maintainability"></div>
                 <div tone-metric-box type="'security'" length="task.metrics.security"></div>
                 <div tone-metric-box type="'workmanship'" length="task.metrics.workmanship"></div>
             </div>
-            <div class="step-info" ng-class="task.buid.state">
+            <div class="step-info"
+                ng-class="task.buid.state" tone-pop-over
+                title="'Build details'"
+                body="'Build details not implemented yet.'">
                 <h5>Build</h5>
                 <div class="computer"><img src="images/computer.png" alt="Debug">Debug</div>
                 <div class="computer"><img src="images/computer.png" alt="Release">Release</div>
                 <div class="show-time">{{ task.buid.startedAt | date : 'h:mma d/M/yyyy' }}</div>
             </div>
-            <div class="step-info" ng-class="task.unitTest.state">
-                <h5>Unit Test</h5>
+            <div class="step-info"
+                ng-class="task.unitTest.state" tone-pop-over
+                title="'Unit Tests details'"
+                body="'Unit Tests details not implemented yet.'">
+                <h5>Unit Tests</h5>
                 <tone-tests-result results="task.unitTest"></tone-tests-result>
             </div>
-            <div class="step-info" ng-class="task.funcionalTest.state">
-                <h5>Functional Test</h5>
+            <div class="step-info"
+                ng-class="task.funcionalTest.state" tone-pop-over
+                title="'Functional Tests details'"
+                body="'Functional Tests details not implemented yet.'">
+                <h5>Functional Tests</h5>
                 <tone-tests-result results="task.funcionalTest"></tone-tests-result>
             </div>
             <div class="result" ng-class="task.result.state" ng-click="$event.stopPropagation();">

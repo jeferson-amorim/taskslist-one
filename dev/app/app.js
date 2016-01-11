@@ -7,15 +7,6 @@
     angular
         .module('tasklist-one', ['ngRoute','ngResource', 'ngAnimate', 'chart.js']);
 
-    var httpInterceptorErrorHandler = function($q) {
-        return {
-            responseError: function (response) {
-                //TODO: Show warning
-                return $q.reject(response);
-            }
-        };
-    };
-
     var appConfig = function ($routeProvider, $httpProvider, $locationProvider) {
 
         $httpProvider.interceptors.push(['$q', httpInterceptorErrorHandler]);
