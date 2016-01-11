@@ -23,4 +23,8 @@
     &.pending div {
         background-color: transparent;
     }
+
+    &.running div {
+        background-color: $running-color;
+    }
 }

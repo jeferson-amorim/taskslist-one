@@ -20,6 +20,19 @@ ul {
         border-width: $border-width;
         border-style: solid;
         border-color: transparent;
+        cursor:pointer;
+    }
+
+    & li.ng-move, & li.ng-enter, & li.ng-leave {
+        @include transition(all linear $transition-time * 0.2);
+    }
+
+    & li.ng-leave.ng-leave-active, & li.ng-move, & li.ng-enter {
+        @include opacity(0);
+    }
+
+    & li.ng-leave, & li.ng-move.ng-move-active, & li.ng-enter.ng-enter-active {
+        @include opacity(1);
     }
 
     & li.rejected {
@@ -31,6 +44,14 @@ ul {
     }
 
     & li.accepted {
+        @extend .base-state;
+    }
+
+    & li.pending {
+        @extend .base-state;
+    }
+
+    & li.running {
         @extend .base-state;
     }
 
@@ -74,6 +95,20 @@ ul {
         @extend .complete-state;
     }
 
+    & li.pending {
+        cursor: not-allowed;
+        border-color: $pending-color;
+        color: $pending-color;
+        @include background-gradient($running-background-color);
+    }
+
+    & li.running {
+        cursor: not-allowed;
+        border-color: $running-font-color;
+        color: $running-font-color;
+        @include background-gradient($running-background-color);
+    }
+
     &.header {
         width: 97%;
         @include display-flex;
@@ -103,7 +138,6 @@ ul {
             background-attachment: fixed;
             margin-bottom: 1rem;
             padding: 0.1rem 0.3rem;
-            cursor:pointer;
 
             div.item, div.details {
                 & div.show-time {
@@ -142,15 +176,34 @@ ul {
                     @include flex(1.3 0);
                 }
 
-                & div.expanded {
-                    visibility: hidden;
+                & div.steps {
+                    @include start-visibile($transition-time * 0.2, linear);
+                    &.expanded {
+                        @extend .hidden-element;
+                    }
                 }
+
             }
 
             div.details {
 
                 @include display-flex;
                 @include flex-wrap(nowrap);
+                overflow: hidden;
+
+                &.ng-enter, &.ng-leave {
+                  @include transition(all linear $transition-time * 0.2);
+                }
+
+                &.ng-enter, &.ng-leave.ng-leave-active {
+                    height: 0;
+                    @include opacity(0);
+                }
+
+                &.ng-leave, &.ng-enter.ng-enter-active {
+                    height: 220px;
+                    @include opacity(1);
+                }
 
                 & > div {
 

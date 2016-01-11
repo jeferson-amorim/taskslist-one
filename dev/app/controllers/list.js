@@ -12,6 +12,10 @@
 
       $scope.toggleSelection = function(task)
       {
+          if ( task.state === 'pending' || task.state === 'running') {
+              return;
+          }
+          
           if ( $scope.selectedTask.changelist !== task.changelist ) {
               $scope.selectedTask.selected = false;
           }

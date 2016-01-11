@@ -2,7 +2,52 @@
 
 let tasks = [
     {
-        'changelist': 432461,
+        'changelist': 432464,
+        'owner': 'Tenrox_R1_1235',
+        'startedAt': '',
+        'state': 'pending',
+        'type': 'build',
+        'metrics': {
+            state: 'pending'
+        },
+        'buid': {
+            state: 'pending'
+        },
+        'unitTest': {
+            state: 'pending'
+        },
+        'funcionalTest': {
+            state: 'pending'
+        },
+        'result': {
+            state: 'pending'
+        }
+    },
+    {
+        'changelist': 432463,
+        'owner': 'jtuck',
+        'startedAt': '2014-04-18T12:12:00.000Z',
+        'state': 'running',
+        'type': 'firewall',
+        'metrics': {
+            state: 'running',
+            progress: 60
+        },
+        'buid': {
+            state: 'pending'
+        },
+        'unitTest': {
+            state: 'pending'
+        },
+        'funcionalTest': {
+            state: 'pending'
+        },
+        'result': {
+            state: 'pending'
+        }
+    },
+    {
+        'changelist': 432462,
         'owner': 'samy',
         'startedAt': '2014-04-18T10:53:00.000Z',
         'state': 'rejected',
@@ -39,7 +84,7 @@ let tasks = [
         }
     },
     {
-        'changelist': 432462,
+        'changelist': 432461,
         'owner': 'samy',
         'startedAt': '2014-04-18T10:53:00.000Z',
         'state': 'accepted',
@@ -76,7 +121,7 @@ let tasks = [
         }
     },
     {
-        'changelist': '432462b',
+        'changelist': 432460,
         'owner': 'Tenrox_R1_1234',
         'startedAt': '2014-04-18T10:53:00.000Z',
         'state': 'complete',

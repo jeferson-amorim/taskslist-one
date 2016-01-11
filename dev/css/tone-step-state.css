@@ -1,3 +1,15 @@
+.hidden-element {
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.visibile-element {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
 .step-state {
   width: 8%;
   height: 2rem;
@@ -16,4 +28,7 @@
 }
 .step-state.pending div {
   background-color: transparent;
+}
+.step-state.running div {
+  background-color: #5e9cd3;
 }

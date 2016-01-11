@@ -9,7 +9,7 @@
     <li>Functional Test</li>
 </ul>
 <ul class="items">
-    <li ng-class="task.state" ng-repeat="task in tasks | orderBy:'-startedAt'" ng-click="toggleSelection(task)">
+    <li ng-class="task.state" ng-repeat="task in tasks | orderBy:'-changelist'" ng-click="toggleSelection(task)">
         <div class="item">
             <div>
                 <img
@@ -19,7 +19,7 @@
             <div><small ng-if="task.type == 'firewall'">{{ task.owner }}</small></div>
             <div class="show-time">{{ task.startedAt | date : 'd/M/yyyy h:mma' }}</div>
             <div class="state">{{ task.state }}</div>
-            <div ng-class="{ expanded: task.selected }">
+            <div class="steps" ng-class="{ expanded: task.selected }">
                 <div tone-step-state state="task.metrics.state" progress="task.metrics.progress"></div>
                 <div tone-step-state state="task.buid.state" progress="task.buid.progress"></div>
                 <div tone-step-state state="task.unitTest.state" progress="task.unitTest.progress"></div>

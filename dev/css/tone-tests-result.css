@@ -1,3 +1,15 @@
+.hidden-element, tone-tests-result div.perc, tone-tests-result div.bar div.content {
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.visibile-element, tone-tests-result.tone-loaded div.perc, tone-tests-result.tone-loaded div.bar div.content {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
 tone-tests-result {
   width: 100%;
   display: -webkit-flex;
@@ -24,6 +36,10 @@ tone-tests-result div.chart-container div.tooltip {
   transform: rotate(-60deg) translate3d(0, 0, 0);
 }
 tone-tests-result div.perc {
+  -moz-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
+  -o-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
+  -webkit-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
+  transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
   width: 50%;
   margin: auto;
   font-size: 2.5rem;
@@ -45,6 +61,10 @@ tone-tests-result div.bar {
   position: relative;
 }
 tone-tests-result div.bar div.content {
+  -moz-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
+  -o-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
+  -webkit-transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
+  transition: visibility 1.5s ease-in, opacity 1.5s ease-in;
   height: 2rem;
   position: relative;
   top: -2rem;

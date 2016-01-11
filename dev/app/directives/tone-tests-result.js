@@ -63,7 +63,7 @@
             scope: {
                 results: '='
             },
-            link: function(scope) {
+            link: function(scope, element) {
 
                 scope.chartOptions = {
                     tooltipEvents: [],
@@ -95,6 +95,7 @@
 
                 $timeout(function() {
                     scope.codeCoveredPerc = scope.getCodeCoveredPerc();
+                    element.addClass('tone-loaded');
                 });
 
             },
