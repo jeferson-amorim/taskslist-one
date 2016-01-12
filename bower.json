@@ -23,6 +23,10 @@
     "angular-resource": "1.2.29",
     "angular-chart.js": "0.8.8",
     "ExplorerCanvas": "*",
-    "es5-shim": "~4.4.1"
+    "es5-shim": "~4.4.1",
+    "angular-mocks": "~1.4.8"
+  },
+  "resolutions": {
+    "angular": "1.2.29"
   }
 }

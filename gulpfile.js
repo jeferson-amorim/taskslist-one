@@ -9,6 +9,7 @@ var jshint          = require('gulp-jshint');
 var livereload      = require('gulp-livereload');
 var spawn           = require('child_process').spawn;
 var compass         = require('gulp-compass');
+var jasmineBrowser  = require('gulp-jasmine-browser');
 var node;
 
 /*=====  End of Loaders  ======*/
@@ -19,13 +20,30 @@ var node;
 
 var files = ['./server.js', './api/**/*.js', './dev/api/**/*.js', './dev/app/**/*.js', '!./dev/app/js/**/*.js'];
 var sassFiles = ['./dev/sass/**/*.scss'];
-
+var specs = [
+    './dev/bower_components/Chart.js/Chart.min.js',
+    './dev/bower_components/angular/angular.min.js',
+    './dev/bower_components/angular-route/angular-route.min.js',
+    './dev/bower_components/angular-resource/angular-resource.min.js',
+    './dev/bower_components/angular-animate/angular-animate.min.js',
+    './dev/bower_components/angular-chart.js/dist/angular-chart.js',
+    './dev/bower_components/angular-mocks/angular-mocks.js',
+    './dev/app/app.js',
+    './dev/app/controllers/*.js',
+    './tests/**/*-specs.js'
+];
 /*=====  End of References  ======*/
 
 gulp.task('hint', function () {
     return gulp.src(files)
         .pipe(jshint({esnext: true, node: true }))
         .pipe(jshint.reporter('default'));
+});
+
+gulp.task('specs', function () {
+    return gulp.src(specs)
+        .pipe(jasmineBrowser.specRunner({console: true}))
+        .pipe(jasmineBrowser.headless());
 });
 
 gulp.task('server', function () {
@@ -55,9 +73,9 @@ gulp.task('compass', function () {
 });
 
 
-gulp.task('api', ['hint', 'compass', 'server'], function () {
+gulp.task('api', ['hint', 'specs', 'compass', 'server'], function () {
 
     livereload.listen();
     gulp.watch(sassFiles, ['compass']);
-    gulp.watch(files, ['hint', 'server', 'files']);
+    gulp.watch(files, ['hint', 'specs', 'server', 'files']);
 });
