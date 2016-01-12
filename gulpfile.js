@@ -10,6 +10,13 @@ var livereload      = require('gulp-livereload');
 var spawn           = require('child_process').spawn;
 var compass         = require('gulp-compass');
 var jasmineBrowser  = require('gulp-jasmine-browser');
+var runSequence     = require('run-sequence');
+var clean           = require('gulp-dest-clean');
+var usemin          = require('gulp-usemin');
+var htmlmin         = require('gulp-htmlmin');
+var concat          = require('gulp-concat');
+var uglify          = require('gulp-uglify');
+var minifyCss       = require('gulp-minify-css');
 var node;
 
 /*=====  End of Loaders  ======*/
@@ -17,6 +24,11 @@ var node;
 /*==================================
 =            References            =
 ==================================*/
+
+var dev = './dev/';
+var app = './public/';
+
+var htmlFiles  = dev + '**/*.html';
 
 var files = ['./server.js', './api/**/*.js', './dev/api/**/*.js', './dev/app/**/*.js', '!./dev/app/js/**/*.js'];
 var sassFiles = ['./dev/sass/**/*.scss'];
@@ -72,6 +84,71 @@ gulp.task('compass', function () {
         }));
 });
 
+gulp.task('build', function () {
+    runSequence('clean', 'copy', 'usemin', 'minify', 'css-base', 'css-hacks', 'scripts', 'uglify', 'final-scripts');
+});
+
+gulp.task('clean', function () {
+    return gulp.src(app)
+        .pipe(clean(app));
+});
+
+gulp.task('copy', function () {
+
+    gulp.src(dev + 'images/**/*')
+        .pipe(gulp.dest(app + 'images'));
+});
+
+gulp.task('usemin', function () {
+    return gulp.src(htmlFiles)
+        .pipe(usemin())
+        .pipe(gulp.dest(app));
+});
+
+gulp.task('minify', function() {
+  return gulp.src(app + '**/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest(app))
+});
+
+gulp.task('css-base', function () {
+    return gulp.src(dev + 'css/main.css')
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest(app + 'css'));
+});
+
+gulp.task('css-hacks', function () {
+    return gulp.src(dev + 'css/ie.css')
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest(app + 'css'));
+});
+
+
+gulp.task('scripts', function() {
+  return gulp.src(dev + 'app/**/*.js')
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest(app + 'app'));
+});
+
+gulp.task('uglify', function () {
+    return gulp.src(app + 'app/app.js')
+        .pipe(uglify())
+        .pipe(gulp.dest(app + 'app'));
+});
+
+gulp.task('final-scripts', function(){
+
+return gulp.src([
+        dev + 'bower_components/Chart.js/Chart.min.js',
+        dev + 'bower_components/angular/angular.min.js',
+        dev + 'bower_components/angular-route/angular-route.min.js',
+        dev + 'bower_components/angular-resource/angular-resource.min.js',
+        dev + 'bower_components/angular-animate/angular-animate.min.js',
+        dev + 'bower_components/angular-chart.js/dist/angular-chart.js',
+        app + 'app/app.js'
+    ]).pipe(concat('app.js'))
+    .pipe(gulp.dest(app + 'app'));
+});
 
 gulp.task('api', ['hint', 'specs', 'compass', 'server'], function () {
 

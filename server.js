@@ -7,7 +7,7 @@ const
   bodyParser = require('body-parser'),
   tasksRoute = require('./api/routers/tasks');
 
-let appRoot = environment === 'production' ? 'dist' : 'dev';
+let appRoot = environment === 'production' ? 'public' : 'dev';
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/' + appRoot));

@@ -210,7 +210,7 @@ ul {
 
                     margin: 1%;
                     min-height: 11rem;
-                    width: 12rem;
+                    width: 11.5rem;
                     border-width: $border-width + 1;
                     @include display-flex;
                     @include flex-wrap(wrap);
@@ -255,7 +255,7 @@ ul {
                     }
 
                     &.result {
-                        width: 13rem;
+                        width: 12.5rem;
                         font-weight: 100;
                         border: 0;
                         background: transparent;

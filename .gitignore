@@ -14,7 +14,7 @@ node_modules
 dev/bower_components
 
 #Dist folder
-dist
+public
 
 .DS_Store
 .sass-cache
