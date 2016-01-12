@@ -25,13 +25,13 @@
                     var parent = angular.element(tooltip.chart.canvas.parentElement);
                     var elements = parent.find('div');
 
-                    for(var i=0;i<elements.length;i++) {
-                        var el = angular.element(elements[i]);
+                    angular.forEach(elements, function(e) {
+                        var el = angular.element(e);
                         if ( el.hasClass(label) ){
                             element = el;
                             return;
                         }
-                    }
+                    });
 
                     if ( ! element ) {
                         element = angular.element('<div></div>');
@@ -85,7 +85,7 @@
                 scope.data = [scope.results.skiped, scope.results.passed];
 
                 scope.getCodeCoveredPerc = function() {
-                    return (scope.results.codeCovered * 100) + '%';
+                    return Math.round(scope.results.codeCovered * 100) + '%';
                 };
 
                 scope.getPassedPerc = function ()

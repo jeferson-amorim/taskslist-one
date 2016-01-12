@@ -27,6 +27,10 @@ ul .base-state, ul li.rejected, ul li.complete, ul li.accepted, ul li.pending, u
   border-style: solid;
   border-color: transparent;
   cursor: pointer;
+  -moz-transition: border-color 1.5s linear, background 1.5s linear, color 1.5s linear;
+  -o-transition: border-color 1.5s linear, background 1.5s linear, color 1.5s linear;
+  -webkit-transition: border-color 1.5s linear, background 1.5s linear, color 1.5s linear;
+  transition: border-color 1.5s linear, background 1.5s linear, color 1.5s linear;
 }
 ul li.ng-move, ul li.ng-enter, ul li.ng-leave {
   -moz-transition: all 0.3s linear;
@@ -157,8 +161,8 @@ ul.items li div.item div.steps {
 ul.items li div.details {
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   overflow: hidden;
 }
 ul.items li div.details.ng-enter, ul.items li div.details.ng-leave {

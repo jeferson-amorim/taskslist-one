@@ -24,6 +24,14 @@
                 templateUrl: 'app/views/list.html',
                 controller: 'ListCtrl'
             })
+            .when('/issues/:changelist', {
+                templateUrl: 'app/views/issues.html',
+                controller: 'IssuesCtrl'
+            })
+            .when('/merged-build/:changelist', {
+                templateUrl: 'app/views/merged-build.html',
+                controller: 'MergedBuildCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

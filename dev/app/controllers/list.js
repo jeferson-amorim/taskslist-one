@@ -2,7 +2,7 @@
 
   'use strict';
 
-  var ListCtrl = function($scope, Tasks) {
+  var ListCtrl = function($scope, $location, Tasks) {
 
       $scope.deployOptions = ['Production', 'Homolog'];
       $scope.deployTarget = $scope.deployOptions[0];
@@ -15,7 +15,7 @@
           if ( task.state === 'pending' || task.state === 'running') {
               return;
           }
-          
+
           if ( $scope.selectedTask.changelist !== task.changelist ) {
               $scope.selectedTask.selected = false;
           }
@@ -24,9 +24,17 @@
           $scope.selectedTask = task;
       };
 
+      $scope.showIssue = function(changelist) {
+          $location.path('/issues/' + changelist );
+      };
+
+      $scope.showMergedBuild = function(changelist) {
+          $location.path('/merged-build/' + changelist );
+      };
+
   };
 
   angular.module('tasklist-one')
-     .controller('ListCtrl', ['$scope', 'Tasks', ListCtrl]);
+     .controller('ListCtrl', ['$scope', '$location', 'Tasks', ListCtrl]);
 
 })();

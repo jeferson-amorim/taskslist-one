@@ -20,9 +20,9 @@
             <div class="state">{{ task.state }}</div>
             <div class="steps" ng-class="{ expanded: task.selected }">
                 <div tone-step-state state="task.metrics.state" progress="task.metrics.progress"></div>
-                <div tone-step-state state="task.buid.state" progress="task.buid.progress"></div>
+                <div tone-step-state state="task.build.state" progress="task.build.progress"></div>
                 <div tone-step-state state="task.unitTest.state" progress="task.unitTest.progress"></div>
-                <div tone-step-state state="task.funcionalTest.state" progress="task.funcionalTest.progress"></div>
+                <div tone-step-state state="task.functionalTest.state" progress="task.functionalTest.progress"></div>
             </div>
         </div>
         <div class="details" ng-if="task.selected">
@@ -37,13 +37,13 @@
                 <div tone-metric-box header="'workmanship'" metric="task.metrics.workmanship"></div>
             </div>
             <div class="step-info"
-                ng-class="task.buid.state" tone-pop-over
+                ng-class="task.build.state" tone-pop-over
                 title="'Build details'"
                 body="'Build details not implemented yet.'">
                 <h5>Build</h5>
                 <div class="computer"><img src="images/computer.png" alt="Debug">Debug</div>
                 <div class="computer"><img src="images/computer.png" alt="Release">Release</div>
-                <div class="show-time">{{ task.buid.startedAt | date : 'h:mma d/M/yyyy' }}</div>
+                <div class="show-time">{{ task.build.startedAt | date : 'h:mma d/M/yyyy' }}</div>
             </div>
             <div class="step-info"
                 ng-class="task.unitTest.state" tone-pop-over
@@ -53,11 +53,11 @@
                 <div tone-tests-result results="task.unitTest"></div>
             </div>
             <div class="step-info"
-                ng-class="task.funcionalTest.state" tone-pop-over
+                ng-class="task.functionalTest.state" tone-pop-over
                 title="'Functional Tests details'"
                 body="'Functional Tests details not implemented yet.'">
                 <h5>Functional Tests</h5>
-                <div tone-tests-result results="task.funcionalTest"></div>
+                <div tone-tests-result results="task.functionalTest"></div>
             </div>
             <div class="result" ng-class="task.result.state" ng-click="$event.stopPropagation();">
                 <h5>Result:</h5>
@@ -67,10 +67,10 @@
                     {{task.result.message}}
                 </div>
                 <div ng-if="task.result.state == 'accepted'" class="action search-icon">
-                    <button>Merged Build</button>
+                    <button ng-click="showMergedBuild(task.changelist)">Merged Build</button>
                 </div>
                 <div ng-if="task.result.state == 'rejected'" class="action">
-                    <button>Find Issues</button>
+                    <button ng-click="showIssue(task.changelist)">Find Issues</button>
                 </div>
                 <div ng-if="task.result.state == 'complete'" class="action">
                     <button>Deploy</button> to:

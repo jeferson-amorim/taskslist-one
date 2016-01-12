@@ -13,11 +13,20 @@
             },
             link: function(scope, element) {
 
-                var imageName = scope.type == 'firewall' ? 'firewall' : 'computer';
-                var imageSrc = 'images/icon-' + scope.state + '-' + imageName + '.png';
+                var addIcon = function() {
+                    var imageName = scope.type == 'firewall' ? 'firewall' : 'computer';
+                    var imageSrc = 'images/icon-' + scope.state + '-' + imageName + '.png';
 
-                element.attr('src', imageSrc);
-                element.attr('alt', 'icon');
+                    element.attr('src', imageSrc);
+                    element.attr('alt', 'icon');
+                    element.addClass('tone-type-icon');
+                };
+
+                scope.$watch('state', function(){
+                    addIcon();
+                });
+
+                addIcon();
             }
         };
     };

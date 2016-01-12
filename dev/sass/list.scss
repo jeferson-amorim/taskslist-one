@@ -21,6 +21,7 @@ ul {
         border-style: solid;
         border-color: transparent;
         cursor:pointer;
+        @include transition(border-color linear $transition-time, background linear $transition-time, color linear $transition-time);
     }
 
     & li.ng-move, & li.ng-enter, & li.ng-leave {
@@ -188,7 +189,7 @@ ul {
             div.details {
 
                 @include display-flex;
-                @include flex-wrap(nowrap);
+                @include flex-wrap(wrap);
                 overflow: hidden;
 
                 &.ng-enter, &.ng-leave {

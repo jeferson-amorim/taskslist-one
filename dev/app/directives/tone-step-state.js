@@ -18,6 +18,12 @@
 
                 if ( state != 'running')
                     scope.progress = 100;
+
+                scope.$watch('state', function(){
+                    element.removeClass('pending running complete rejected');
+                    element.addClass(scope.state);
+                });
+
             },
             template: '<div ng-style="{ \'width\': progress + \'%\' }"></div>'
         };
