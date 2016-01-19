@@ -12,6 +12,7 @@
 
 body {
   min-width: 1050px;
+  max-width: 1300px;
 }
 
 ul.header {

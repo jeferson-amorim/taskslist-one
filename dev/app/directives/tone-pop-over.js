@@ -18,12 +18,12 @@
 
     var tonePopOver = function ($compile) {
 
-        var template = '<div ng-show="showing" class="tone-pop-over"><h6>{{title}}</h6><div class="tone-pop-over-body">{{body}}</div></div>';
+        var template = '<div ng-show="showing" class="tone-pop-over"><h6>{{header}}</h6><div class="tone-pop-over-body">{{body}}</div></div>';
 
         return {
             restrict: 'A',
             scope: {
-                title: '=',
+                header: '=',
                 body: '='
             },
             link: function(scope, element, attrs) {

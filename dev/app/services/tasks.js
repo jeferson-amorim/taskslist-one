@@ -13,6 +13,8 @@
          });
       };
 
+      // TaskMonitor to listen updates on pending and running tasks
+      // websockets isnt alternative because ie8 doesn't support it
       var TaskMonitor = function(task) {
 
           var self = this;
@@ -35,7 +37,7 @@
           };
 
           this.wait = function() {
-              $timeout(self.verify, 100);
+              $timeout(self.verify, 500);
           };
 
           this.wait();

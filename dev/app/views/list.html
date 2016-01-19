@@ -28,7 +28,7 @@
         <div class="details" ng-if="task.selected">
             <div class="step-info"
                 ng-class="task.metrics.state" tone-pop-over
-                title="'Metrics details'"
+                header="'Metrics details'"
                 body="'Metrics details not available yet.'">
                 <h5>Metrics</h5>
                 <div tone-metric-box header="'test'" metric="task.metrics.test"></div>
@@ -38,7 +38,7 @@
             </div>
             <div class="step-info"
                 ng-class="task.build.state" tone-pop-over
-                title="'Build details'"
+                header="'Build details'"
                 body="'Build details not implemented yet.'">
                 <h5>Build</h5>
                 <div class="computer"><img src="images/computer.png" alt="Debug">Debug</div>
@@ -47,14 +47,14 @@
             </div>
             <div class="step-info"
                 ng-class="task.unitTest.state" tone-pop-over
-                title="'Unit Tests details'"
+                header="'Unit Tests details'"
                 body="'Unit Tests details not implemented yet.'">
                 <h5>Unit Tests</h5>
                 <div tone-tests-result results="task.unitTest"></div>
             </div>
             <div class="step-info"
                 ng-class="task.functionalTest.state" tone-pop-over
-                title="'Functional Tests details'"
+                header="'Functional Tests details'"
                 body="'Functional Tests details not implemented yet.'">
                 <h5>Functional Tests</h5>
                 <div tone-tests-result results="task.functionalTest"></div>
