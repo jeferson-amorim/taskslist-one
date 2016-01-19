@@ -1,7 +1,7 @@
 {
   "name": "tasklist-one",
   "version": "1.0.0",
-  "description": "Tasklist One :: https://tasklist-one.herokuapp.com/",
+  "description": "Tasklist One :: http://tasklist-one.herokuapp.com/",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.14.2",
