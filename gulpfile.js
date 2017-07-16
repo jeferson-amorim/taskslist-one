@@ -138,16 +138,16 @@ gulp.task('uglify', function () {
 
 gulp.task('final-scripts', function(){
 
-return gulp.src([
-        dev + 'bower_components/Chart.js/Chart.min.js',
-        dev + 'bower_components/angular/angular.min.js',
-        dev + 'bower_components/angular-route/angular-route.min.js',
-        dev + 'bower_components/angular-resource/angular-resource.min.js',
-        dev + 'bower_components/angular-animate/angular-animate.min.js',
-        dev + 'bower_components/angular-chart.js/dist/angular-chart.js',
-        app + 'app/app.js'
-    ]).pipe(concat('app.js'))
-    .pipe(gulp.dest(app + 'app'));
+  return gulp.src([
+          dev + 'bower_components/Chart.js/Chart.min.js',
+          dev + 'bower_components/angular/angular.min.js',
+          dev + 'bower_components/angular-route/angular-route.min.js',
+          dev + 'bower_components/angular-resource/angular-resource.min.js',
+          dev + 'bower_components/angular-animate/angular-animate.min.js',
+          dev + 'bower_components/angular-chart.js/dist/angular-chart.js',
+          app + 'app/app.js'
+      ]).pipe(concat('app.js'))
+      .pipe(gulp.dest(app + 'app'));
 });
 
 gulp.task('api', ['hint', 'specs', 'compass', 'server'], function () {

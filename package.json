@@ -30,9 +30,10 @@
     "jasmine-core": "^2.4.1"
   },
   "scripts": {
+    "start": "gulp api",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "gulp specs",
-    "start": "node server.js",
-    "postinstall": "bower install && gulp build"
+    "prestart": "npm install"
   },
   "repository": {
     "type": "git",
